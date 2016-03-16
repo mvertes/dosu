@@ -1,0 +1,7 @@
+#!/bin/sh
+[ $# -lt 2 ] && echo "Usage: dosu user command [args...]" >&2 && exit 1
+user=$1
+shift
+cmd=exec
+for i; do cmd="$cmd '$i'"; done
+exec su -s /bin/sh -c "$cmd" "$user"
