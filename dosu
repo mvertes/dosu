@@ -4,4 +4,4 @@ user=$1
 shift
 cmd=exec
 for i; do cmd="$cmd '$i'"; done
-exec su -s /bin/sh -c "$cmd" "$user"
+exec busybox su -s /bin/sh -c "$cmd" "$user"
